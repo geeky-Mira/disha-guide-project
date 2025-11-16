@@ -1,0 +1,9 @@
+fastapi
+pydantic
+firebase-admin
+google-generativeai
+python-dotenv
+passlib[bcrypt]
+python-jose[cryptography]
+uvicorn
+pip-audit

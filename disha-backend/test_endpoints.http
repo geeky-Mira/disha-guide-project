@@ -1,0 +1,60 @@
+### Root Welcome
+GET http://127.0.0.1:8000/
+
+### Health Check
+GET http://127.0.0.1:8000/ping
+
+
+### ⬇️ Protected Routes (require Firebase ID Token)
+# Before running, replace <YOUR_ID_TOKEN> with a real token:
+# 1. Sign in on frontend
+# 2. Run in browser console: await auth.currentUser.getIdToken()
+# 3. Copy the token and paste it below
+
+### Upsert User Profile (create/update)
+POST http://127.0.0.1:8000/users/testuser123
+Authorization: Bearer <YOUR_ID_TOKEN>
+Content-Type: application/json
+
+{
+  "name": "Miratun Nahar",
+  "email": "miratun@example.com",
+  "interests": ["AI", "Machine Learning", "Career Guidance"]
+}
+
+### Fetch User Profile
+GET http://127.0.0.1:8000/users/testuser123
+Authorization: Bearer <YOUR_ID_TOKEN>
+
+
+### ⬇️ (Optional) Auth Placeholders
+# These are dummy endpoints (not real Firebase login/signup).
+# They’re left here in case we decide to extend backend-managed auth later.
+
+### Auth Placeholder - Login
+POST http://127.0.0.1:8000/auth/login
+Content-Type: application/json
+
+{
+  "email": "miratun@example.com",
+  "password": "testpassword"
+}
+
+### Auth Placeholder - Signup
+POST http://127.0.0.1:8000/auth/signup
+Content-Type: application/json
+
+{
+  "name": "Miratun Nahar",
+  "email": "miratun@example.com",
+  "password": "testpassword"
+}
+
+
+### Career Recommendations
+GET http://127.0.0.1:8000/career/recommendations
+Authorization: Bearer <YOUR_ID_TOKEN>
+
+### Career Pathways
+GET http://127.0.0.1:8000/career/pathways
+Authorization: Bearer <YOUR_ID_TOKEN>
