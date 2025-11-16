@@ -1,0 +1,20 @@
+# Core web framework
+fastapi
+
+# ASGI server to run FastAPI
+uvicorn
+
+# For loading environment variables from .env files
+python-dotenv
+
+# Google's library for the Gemini API
+google-generativeai
+
+# Firebase Admin SDK for Python
+firebase-admin
+
+# For validating email addresses
+email-validator
+
+# Argon2 password hashing (often a dependency of auth libraries)
+argon2-cffi
