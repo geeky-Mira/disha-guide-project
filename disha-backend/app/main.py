@@ -10,10 +10,11 @@ app = FastAPI(
     version="0.1.0",
 )
 
-# ✅ Allow local frontend to talk to backend
+# ✅ Allow local and deployed frontend to talk to backend
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://disha-guide-project.vercel.app",
 ]
 
 app.add_middleware(
