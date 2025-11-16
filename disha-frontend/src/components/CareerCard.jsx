@@ -50,7 +50,7 @@ export default function CareerCard({ career, savedPaths = [] }) {
           {career.description || "No description available."}
         </p>
 
-        {career.pathway?.length > 0 && (
+        {Array.isArray(career.pathway) && career.pathway.length > 0 && (
           <div className="mt-2">
             <strong>Suggested Pathway:</strong>
             <ul className="small mt-1 mb-0">

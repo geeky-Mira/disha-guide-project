@@ -41,13 +41,25 @@ def fetch_user_profile(
     user_id: str,
     decoded_token: dict = Depends(verify_firebase_token)
 ):
-    """Fetch full Firestore user document."""
+    """
+    Fetch full Firestore user document.
+    If the document doesn't exist, it creates a default one and returns it.
+    """
     if user_id != decoded_token.get("uid"):
         raise HTTPException(status_code=403, detail="User ID mismatch")
 
     user_data = fs.get_user(user_id)
+    
+    # If user document doesn't exist, create it with a default structure.
     if not user_data:
-        raise HTTPException(status_code=404, detail="User not found")
+        print(f"[INFO] User document for {user_id} not found. Creating a new one.")
+        email = decoded_token.get("email", "")
+        fs.ensure_user_document(user_id, email)
+        # Fetch the newly created document to return it
+        user_data = fs.get_user(user_id)
+        # If it's still not found (which would be an issue), return a default
+        if not user_data:
+             return {"email": email, "profile": {}, "compass": {"recommendations": [], "saved_paths": []}}
 
     return user_data
 
