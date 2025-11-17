@@ -90,6 +90,3 @@ def delete_current_user(decoded_token: dict = Depends(verify_firebase_token)):
         # For all other unexpected errors, log the detail but return a generic message.
         print(f"❌ An unexpected error occurred during account deletion: {e}")
         raise HTTPException(status_code=500, detail="An internal server error occurred during account deletion.")
-
-
-
