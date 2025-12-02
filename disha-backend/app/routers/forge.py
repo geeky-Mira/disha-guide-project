@@ -20,10 +20,10 @@ router = APIRouter()
 # -----------------------------------------------------
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent"
+GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-001:generateContent"
 
-quiz_model = genai.GenerativeModel("gemini-2.5-flash")
-feedback_model = genai.GenerativeModel("gemini-2.5-flash") # New model for feedback
+quiz_model = genai.GenerativeModel("gemini-2.0-flash-001")# free model 
+feedback_model = genai.GenerativeModel("gemini-2.0-flash-001") 
 
 # -----------------------------------------------------
 # MODELS
