@@ -96,5 +96,5 @@ You will need to run two separate terminals for the backend and frontend.
     ```
     You can now access the application at `http://localhost:5173`.
 ### Live deployments
-**backend:** https://disha-guide-project.onrender.com
-**frontend:** https://disha-guide-project.vercel.app/
+- **backend:** https://disha-guide-project.onrender.com
+- **frontend:** https://disha-guide-project.vercel.app/
