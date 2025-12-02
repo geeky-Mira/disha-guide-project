@@ -23,15 +23,15 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Models now use centralized system instructions from prompts.py
 chat_model = genai.GenerativeModel(
-    "gemini-2.5-flash",
+    "gemini-2.0-flash-001",
     system_instruction=prompts.CHAT_MODEL_INSTRUCTION
 )
 profile_model = genai.GenerativeModel(
-    "gemini-2.5-flash",
+    "gemini-2.0-flash-001",
     system_instruction=prompts.PROFILE_EXTRACTION_INSTRUCTION
 )
 career_model = genai.GenerativeModel(
-    "gemini-2.5-pro",
+    "gemini-2.0-flash-001",
     system_instruction=prompts.CAREER_RECOMMENDATION_INSTRUCTION
 )
 
